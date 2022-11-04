@@ -1080,6 +1080,14 @@
   dependencies:
     "pkg-up" "^3.1.0"
 
+"@fastify/cors@^8.1.1":
+  "integrity" "sha512-YpkNonoJtn7Zcq2uyh0bFPcjW+njWZ9rz5gl8o5NDUvpBIPjg5m/3IHvsq91Pp/fFhLL7XgVOUyk+gMl8tb5FQ=="
+  "resolved" "https://registry.npmjs.org/@fastify/cors/-/cors-8.1.1.tgz"
+  "version" "8.1.1"
+  dependencies:
+    "fastify-plugin" "^4.0.0"
+    "mnemonist" "0.39.4"
+
 "@fastify/deepmerge@^1.0.0":
   "integrity" "sha512-E8Hfdvs1bG6u0N4vN5Nty6JONUfTdOciyD5rn8KnEsLKIenvOVcr210BQR9t34PRkNyjqnMLGk3e0BsaxRdL+g=="
   "resolved" "https://registry.npmjs.org/@fastify/deepmerge/-/deepmerge-1.1.0.tgz"
@@ -2633,6 +2641,13 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
+"mnemonist@0.39.4":
+  "integrity" "sha512-WlE2Ugow1ENH5un0OthjsjpJb/nbkUQ/jUOHtZUqh58JNzEHNxkm0tIFRAoExsANW/fTN/rxBUMFY/7jPDvxdQ=="
+  "resolved" "https://registry.npmjs.org/mnemonist/-/mnemonist-0.39.4.tgz"
+  "version" "0.39.4"
+  dependencies:
+    "obliterator" "^2.0.1"
+
 "mongodb-connection-string-url@^2.5.4":
   "integrity" "sha512-SeAxuWs0ez3iI3vvmLk/j2y+zHwigTDKQhtdxTgt5ZCOQQS5+HW4g45/Xw5vzzbn7oQXCNQ24Z40AkJsizEy7w=="
   "resolved" "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.5.4.tgz"
@@ -2749,6 +2764,11 @@
   "integrity" "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg=="
   "resolved" "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
   "version" "4.1.1"
+
+"obliterator@^2.0.1":
+  "integrity" "sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ=="
+  "resolved" "https://registry.npmjs.org/obliterator/-/obliterator-2.0.4.tgz"
+  "version" "2.0.4"
 
 "on-exit-leak-free@^1.0.0":
   "integrity" "sha512-Ve8ubhrXRdnuCJ5bQSQpP3uaV43K1PMcOfSRC1pqHgRZommXCgsXwh08jVC5NpjwScE23BPDwDvVg4cov3mwjw=="

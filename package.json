@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "@fastify/autoload": "^5.0.0",
+    "@fastify/cors": "^8.1.1",
     "@fastify/mongodb": "^6.1.0",
     "@fastify/sensible": "^4.1.0",
-    "@fastify/swagger": "^8.1.0",
     "@fastify/swagger": "^8.1.0",
     "@fastify/swagger-ui": "^1.2.0",
     "abort-controller": "^3.0.0",

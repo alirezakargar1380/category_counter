@@ -1,5 +1,5 @@
 export default {
-    routePrefix: '/documentation',
+    // routePrefix: '/documentation',
     uiConfig: {
         docExpansion: 'full',
         deepLinking: false

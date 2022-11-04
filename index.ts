@@ -6,7 +6,12 @@ const fastify: FastifyInstance = Fastify()
 const start = async () => {
     try {
         loaders(fastify)
+
         await fastify.ready()
+        // fastify.ready((err) => {
+        //     if (err) throw err
+        // })
+        
         fastify.swagger()
         fastify.listen({ port: 3000 }, (err) => {
             if (err) console.log(err)

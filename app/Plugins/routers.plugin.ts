@@ -1,5 +1,4 @@
 import { FastifyInstance, FastifyRequest, FastifyReply, RouteOptions } from 'fastify';
-import { IFastifyRoutes } from '../Shared/interfaces/apis/fastify.api.interface';
 import categoryRouters from './../Api/Routers/category.routers'
 
 async function routes (fastify: FastifyInstance, options: any) {

@@ -1,6 +1,5 @@
 import { FastifyRequest, FastifyReply, RouteOptions, FastifySchema } from 'fastify';
 import * as categorysOpts from './../Options/categorys.options'
-import {IFastifyRoutes} from "./../../Shared/interfaces/apis/fastify.api.interface"
 import { apisMethods } from '../../Shared/constants/api/apis.methods';
 
 // export default (fastifyApp: FastifyInstance) => {

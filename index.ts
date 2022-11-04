@@ -1,17 +1,16 @@
 import Fastify, { FastifyInstance } from 'fastify';
-import fastifyLoader from './app/Loaders';
+import loaders from './app/Loaders';
 
 const fastify: FastifyInstance = Fastify()
 
-
-fastify.get("/", () => {
-    return 'fuck'
-})
-
-const start = async () => {
+const start = () => {
     try {
-        fastifyLoader(fastify)
-        await fastify.listen({ port: 3000 })
+        loaders(fastify)
+        fastify.listen({ port: 3000 }, (err) => {
+            if (err) console.log(err)
+            else console.log(`app listen on port 3000`)
+        })
+
     } catch (err) {
         fastify.log.error(err)
     }

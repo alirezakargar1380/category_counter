@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@fastify/autoload": "^5.0.0",
+    "@fastify/mongodb": "^6.1.0",
     "@fastify/sensible": "^4.1.0",
     "abort-controller": "^3.0.0",
     "abstract-logging": "^2.0.1",
@@ -30,7 +31,8 @@
     "fast-uri": "^2.1.0",
     "fastify": "^4.0.0",
     "fastify-cli": "^4.4.0",
-    "fastify-plugin": "^3.0.0",
+    "fastify-mongodb": "^4.2.0",
+    "fastify-plugin": "^3.0.1",
     "fastq": "^1.13.0",
     "find-my-way": "^7.3.1",
     "forwarded": "^0.2.0",
@@ -40,6 +42,7 @@
     "light-my-request": "^5.6.1",
     "lru-cache": "^6.0.0",
     "ms": "^2.1.2",
+    "nodemon": "^2.0.20",
     "on-exit-leak-free": "^2.1.0",
     "pino": "^8.7.0",
     "pino-abstract-transport": "^1.0.0",
@@ -74,7 +77,8 @@
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
     "start": "fastify start -l info index.ts",
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "devv": "fastify start -w index.ts"
   },
   "keywords": [],
   "author": "",

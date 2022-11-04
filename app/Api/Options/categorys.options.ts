@@ -1,3 +1,5 @@
+import { FastifySchema } from 'fastify';
+
 export const getAllCategoryOpts = {
     schema: {
         description: 'post some data',
@@ -30,8 +32,8 @@ export const getAllCategoryOpts = {
     }
 }
 
-export const getCategoryByIdOpts = {
-    schema: {
+export const getCategoryByIdOpts: FastifySchema = {
+    // schema: {
         description: 'post some data',
         tags: ['categorys'],
         summary: 'qwerty',
@@ -64,7 +66,7 @@ export const getCategoryByIdOpts = {
             //     "apiKey": []
             // }
         ]
-    }
+    // }
 }
 
 export const createCategoryOpts = {

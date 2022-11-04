@@ -1,12 +1,13 @@
 import { FastifyInstance } from 'fastify';
+import * as categorysOpts from './../Options/categorys.options'
 
 export default (fastifyApp: FastifyInstance) => {
-    // get category by id
-    fastifyApp.get('/category/:category_id', (req, rep) => { return 'get' })
+    // get category
+    fastifyApp.get('/category/:category_id', categorysOpts.getCategoryByIdOpts, (req, rep) => { return 'get' })
+    
+    // get category
+    fastifyApp.get('/categorys/:page_num', categorysOpts.getAllCategoryOpts, (req, rep) => { return req.params })
 
     // create category
-    fastifyApp.post('/category', (req, rep) => { return 'get' })
-
-    // get all category
-    fastifyApp.get('/categorys', (req, rep) => { return 'get' })
+    fastifyApp.post('/category', categorysOpts.createCategoryOpts, (req, rep) => { return 'get' })
 }

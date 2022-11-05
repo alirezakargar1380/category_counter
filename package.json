@@ -45,6 +45,8 @@
     "json-schema-traverse": "^1.0.0",
     "light-my-request": "^5.6.1",
     "lru-cache": "^6.0.0",
+    "mocha": "^10.1.0",
+    "mongoose": "^6.7.1",
     "ms": "^2.1.2",
     "nodemon": "^2.0.20",
     "on-exit-leak-free": "^2.1.0",
@@ -71,17 +73,21 @@
     "split2": "^4.1.0",
     "thread-stream": "^2.2.0",
     "tiny-lru": "^9.0.3",
+    "ts-node": "^10.9.1",
     "uri-js": "^4.4.1",
     "yallist": "^4.0.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^10.0.0",
     "@types/node": "^18.11.9",
+    "chai": "^4.3.6",
     "tap": "^16.1.0"
   },
   "scripts": {
-    "test": "tap \"test/**/*.test.js\"",
     "start": "fastify start -l info index.ts",
     "dev": "nodemon index.ts",
+    "test": "mocha -r ts-node/register 'test/**/*.ts'",
     "devv": "fastify start -w index.ts"
   },
   "keywords": [],

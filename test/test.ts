@@ -29,5 +29,6 @@ describe("COUNTER SERVICE", () => {
         counterService.create().then(() => { done() }).catch((err) => { done(err) })
     })
 
-    repositorys.categorys.aggOne().then((d) => console.log(d))
+    // repositorys.categorys.aggOne().then((d) => console.log(d))
+    repositorys.counter.findOne('63662fae8205ac47da3e062f').then((d) => console.log(d))
 })

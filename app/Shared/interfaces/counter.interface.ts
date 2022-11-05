@@ -7,3 +7,5 @@ export interface ICounter {
     createdAt: Date;
     updatedAt: Date;
 }
+
+export interface ICounterCreateInput extends Omit<ICounter, '_id' | 'createdAt' | 'updatedAt'> { }

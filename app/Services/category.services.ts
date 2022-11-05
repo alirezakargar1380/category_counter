@@ -8,3 +8,7 @@ export const create = async (title: string): Promise<ICategory> => {
 export const getCategory = async (page_num: number) => {
     return await repositorys.categorys.agg((page_num-1)*10, page_num*10)
 }
+
+export const getCategoryById = async (id: string) => {
+    return await repositorys.categorys.aggOne(id)
+}

@@ -7,7 +7,7 @@ import { getCategoryById, getCategorys, createCategorys } from '../Controllers/c
 
 export default (fastifyApp: FastifyInstance) => {
   // get category
-  fastifyApp.get(`${process.env.BASE_API_URL}/category/:category_id`, { schema: categorysOpts.getCategoryByIdOpts }, (req, rep) => { return 'get' })
+  fastifyApp.get(`${process.env.BASE_API_URL}/category/:category_id`, { schema: categorysOpts.getCategoryByIdOpts }, getCategoryById)
 
   // get category
   fastifyApp.get(`${process.env.BASE_API_URL}/categorys/:page_num`, { schema: categorysOpts.getAllCategoryOpts }, getCategorys)

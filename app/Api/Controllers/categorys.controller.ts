@@ -1,7 +1,7 @@
 import { FastifyRequest, FastifyReply, RouteOptions, FastifySchema, RouteHandlerMethod, RawReplyDefaultExpression, RawServerDefault, RawRequestDefaultExpression } from 'fastify';
 
 // interface
-import { IBodyCreateCategory, IParamGetCategorys, IReplyCreateCategory } from '../../Shared/interfaces/api/categorys.api.interface';
+import { IBodyCreateCategory, IParamGetCategoryById, IParamGetCategorys, IReplyCreateCategory } from '../../Shared/interfaces/api/categorys.api.interface';
 import { ICategory } from '../../Shared/interfaces/category.interface';
 
 // services
@@ -11,13 +11,17 @@ import { ICounter } from '../../Shared/interfaces/counter.interface';
 
 import validation from "../../Validation/category.validation"
 
-export const getCategoryById = (req: FastifyRequest, rep: FastifyReply) => {
-
+export const getCategoryById = async (request: FastifyRequest<{ Params: IParamGetCategoryById }>, reply: FastifyReply) => {
+    try {
+        reply.status(200).send(await categoryService.getCategoryById(request.params.category_id))
+    } catch (error: any) {
+        if (error.extensions) reply.status(500).send(error.extensions)
+        else reply.status(500).send("internal server error")
+    }
 }
 
 export const getCategorys = async (request: FastifyRequest<{ Params: IParamGetCategorys }>, reply: FastifyReply) => {
     try {
-        // TODO: validation
         validation.update(request.params)
         reply.status(200).send(await categoryService.getCategory(Number(request.params.page_num)))
 

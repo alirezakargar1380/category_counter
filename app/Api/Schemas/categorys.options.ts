@@ -46,25 +46,29 @@ export const getCategoryByIdOpts: FastifySchema = {
         params: {
             type: 'object',
             properties: {
-                id: {
+                category_id: {
                     type: 'string',
                     description: 'user id'
                 }
             }
         },
-        // body: {
-        //     type: 'object',
-        //     properties: {
-        //         hello: { type: 'string' }
-        //     }
-        // },
         response: {
             200: {
                 description: 'Successful response',
-                type: 'object',
+                type: 'array',
                 properties: {
-                    hello: { type: 'string' }
+                    title: { type: 'string' },
+                    counter: { 
+                        type: 'object',
+                        properties: {
+                            counter_number: { type: 'integer' },
+                        }
+                    },
                 }
+            },
+            404: {
+                description: 'document not found',
+                type: 'string',
             }
         },
         security: [

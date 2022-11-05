@@ -1,4 +1,4 @@
-import { ICategory, ICategoryCreateInput } from '../Shared/interfaces/category.interface';
+import { ICategory, ICategoryCreateInput, ICategoryDoc } from '../Shared/interfaces/category.interface';
 import category from './../Model/category.model'
 
 export class categorysRepository {

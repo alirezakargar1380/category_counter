@@ -8,4 +8,5 @@ export interface ICounter {
     updatedAt: Date;
 }
 
-export interface ICounterCreateInput extends Omit<ICounter, '_id' | 'createdAt' | 'updatedAt'> { }
+export interface ICounterCreateInput extends Omit<ICounter, '_id' | 'createdAt' | 'updatedAt'> {}
+export interface ICounterUpdateInput extends Partial<ICounterCreateInput> {}

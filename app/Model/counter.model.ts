@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose'
 import { ICounter } from '../Shared/interfaces/counter.interface'
 
-const counterSchema: Schema = new Schema<ICounter>({
+const counterSchema = new Schema<ICounter>({
     category_id: {
         type: Schema.Types.ObjectId,
         ref: 'categorys',

@@ -8,4 +8,4 @@ export interface ICategory {
 }
 
 export interface ICategoryCreateInput extends Omit<ICategory, '_id' | 'createdAt' | 'updatedAt'> { }
-
+export interface ICategoryUpdateInput extends Partial<ICategoryCreateInput>{}

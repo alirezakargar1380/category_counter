@@ -8,7 +8,7 @@ export class categorysRepository {
         return await this.categoryModel.create(inputs)
     }
 
-    async agg() {
+    async agg(skip: number, limit: number) {
         return await this.categoryModel.aggregate([
             {
                 $lookup: {
@@ -24,10 +24,10 @@ export class categorysRepository {
                     "preserveNullAndEmptyArrays": true
                 }
             }
-        ]).skip(0).limit(1)
+        ]).skip(skip).limit(limit)
     }
 
-    async aggOne() {
+    async aggOne(id: string) {
         return await this.categoryModel.aggregate([
             {
                 $lookup: {
@@ -39,7 +39,7 @@ export class categorysRepository {
             },
             {
                 $match: {
-                    $expr: { $eq: ['$_id', { $toObjectId: "6366279cc654fbf47abbfd36" }] },
+                    $expr: { $eq: ['$_id', { $toObjectId: id }] },
                 }
             },
             {

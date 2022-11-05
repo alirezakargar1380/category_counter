@@ -1,7 +1,7 @@
 import { FastifySchema } from 'fastify';
 
 export const getAllCategoryOpts = {
-    schema: {
+    // schema: {
         description: 'post some data',
         tags: ['categorys'],
         summary: 'qwerty',
@@ -18,18 +18,24 @@ export const getAllCategoryOpts = {
         response: {
             200: {
                 description: 'Successful response',
-                type: 'object',
+                type: 'array',
                 properties: {
-                    page_num: { type: 'string' }
+                    title: { type: 'string' },
+                    counter: { 
+                        type: 'object',
+                        properties: {
+                            counter_number: { type: 'integer' },
+                        }
+                    },
                 }
-            }
+            },
         },
         security: [
             // {
             //     "apiKey": []
             // }
         ]
-    }
+    // }
 }
 
 export const getCategoryByIdOpts: FastifySchema = {
@@ -94,10 +100,10 @@ export const createCategoryOpts = {
                 },
             }
         },
-        500: {
-            description: 'internal server error',
-            type: 'string',
-        }
+        // 500: {
+        //     description: 'internal server error',
+        //     type: 'string',
+        // }
     },
     security: [
         // {

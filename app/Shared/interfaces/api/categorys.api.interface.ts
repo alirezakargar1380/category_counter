@@ -9,5 +9,10 @@ export const IReplyCreateCategory = Type.Object({
   title: Type.String()
 })
 
+export const IParamGetCategorys = Type.Object({
+    page_num: Type.String()
+})
+
 export type IBodyCreateCategory = Static<typeof User>
 export type IReplyCreateCategory = Static<typeof IReplyCreateCategory>
+export type IParamGetCategorys = Static<typeof IParamGetCategorys>

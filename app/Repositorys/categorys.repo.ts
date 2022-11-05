@@ -7,4 +7,23 @@ export class categorysRepository {
     async create(inputs: ICategoryCreateInput): Promise<ICategory> {
         return await this.categoryModel.create(inputs)
     }
+
+    async agg() {
+        return await this.categoryModel.aggregate([
+            {
+                $lookup: {
+                    from: "counters",
+                    localField: "_id",
+                    foreignField: "category_id",
+                    as: "counter"
+                }
+            },
+            {
+                $unwind: {
+                    "path": "$counter",
+                    "preserveNullAndEmptyArrays": true
+                }
+            }
+        ])
+    }
 }

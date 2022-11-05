@@ -25,10 +25,7 @@ describe("CATEGORYS SERVICE", () => {
 })
 
 describe("COUNTER SERVICE", () => {
-    it('create', (done) => {
-        counterService.create().then(() => { done() }).catch((err) => { done(err) })
+    it('min', (done) => {
+        counterService.min("6366279cc654fbf47abbfd36").then(() => { done() }).catch((err) => { done(err) })
     })
-
-    // repositorys.categorys.aggOne().then((d) => console.log(d))
-    repositorys.counter.findOne('63662fae8205ac47da3e062f').then((d) => console.log(d))
 })

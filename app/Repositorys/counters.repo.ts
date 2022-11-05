@@ -8,13 +8,19 @@ export class counterRepository {
         return await this.counterModel.create(inputs)
     }
 
-    async findOne(id: string) {
+    async findOne(id: string): Promise<ICounter | null> {
         return await this.counterModel.findOne({
             _id: id
         })
     }
 
-    async findOneAndUpdate(id: string, newData: ICounterUpdateInput) {
+    async findOneByCategoryId(id: string): Promise<ICounter | null> {
+        return await this.counterModel.findOne({
+            category_id: id
+        })
+    }
+
+    async findOneAndUpdate(id: string, newData: ICounter) {
         await this.counterModel.updateOne({ _id: id }, newData)
     }
 }

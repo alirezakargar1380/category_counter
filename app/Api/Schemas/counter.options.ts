@@ -7,7 +7,7 @@ export const plusCounterOpts: FastifySchema = {
     params: {
         type: 'object',
         properties: {
-            page_num: {
+            category_id: {
                 type: 'string',
                 description: 'page number',
                 default: '1'
@@ -17,15 +17,9 @@ export const plusCounterOpts: FastifySchema = {
     response: {
         200: {
             description: 'Successful response',
-            type: 'array',
+            type: 'object',
             properties: {
-                title: { type: 'string' },
-                counter: {
-                    type: 'object',
-                    properties: {
-                        counter_number: { type: 'integer' },
-                    }
-                },
+                counter_number: { type: 'integer' }
             }
         },
     },
@@ -43,7 +37,7 @@ export const minCounterOpts: FastifySchema = {
     params: {
         type: 'object',
         properties: {
-            page_num: {
+            category_id: {
                 type: 'string',
                 description: 'page number',
                 default: '1'
@@ -53,15 +47,9 @@ export const minCounterOpts: FastifySchema = {
     response: {
         200: {
             description: 'Successful response',
-            type: 'array',
+            type: 'object',
             properties: {
-                title: { type: 'string' },
-                counter: {
-                    type: 'object',
-                    properties: {
-                        counter_number: { type: 'integer' },
-                    }
-                },
+                counter_number: { type: 'integer' }
             }
         },
     },

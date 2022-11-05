@@ -9,4 +9,4 @@ export interface ICounter {
 }
 
 export interface ICounterCreateInput extends Omit<ICounter, '_id' | 'createdAt' | 'updatedAt'> {}
-export interface ICounterUpdateInput extends Partial<ICounterCreateInput> {}
+export interface ICounterUpdateInput extends Partial<ICounter> {}

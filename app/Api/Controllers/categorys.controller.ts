@@ -1,4 +1,4 @@
-import { FastifyRequest, FastifyReply, RouteOptions, FastifySchema, RouteHandlerMethod, RawReplyDefaultExpression, RawServerDefault, RawRequestDefaultExpression } from 'fastify';
+import { FastifyRequest, FastifyReply } from 'fastify';
 
 // interface
 import { IBodyCreateCategory, IParamGetCategoryById, IParamGetCategorys, IReplyCreateCategory } from '../../Shared/interfaces/api/categorys.api.interface';

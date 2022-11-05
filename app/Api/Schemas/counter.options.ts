@@ -1,8 +1,8 @@
 import { FastifySchema } from 'fastify';
 
-export const getAllCategoryOpts: FastifySchema = {
-    description: 'post some data',
-    tags: ['categorys'],
+export const plusCounterOpts: FastifySchema = {
+    description: 'add one to counter',
+    tags: ['counters'],
     summary: 'qwerty',
     params: {
         type: 'object',
@@ -36,16 +36,17 @@ export const getAllCategoryOpts: FastifySchema = {
     ]
 }
 
-export const getCategoryByIdOpts: FastifySchema = {
-    description: 'post some data',
-    tags: ['categorys'],
+export const minCounterOpts: FastifySchema = {
+    description: 'min one to counter',
+    tags: ['counters'],
     summary: 'qwerty',
     params: {
         type: 'object',
         properties: {
-            category_id: {
+            page_num: {
                 type: 'string',
-                description: 'user id'
+                description: 'page number',
+                default: '1'
             }
         }
     },
@@ -63,47 +64,6 @@ export const getCategoryByIdOpts: FastifySchema = {
                 },
             }
         },
-        404: {
-            description: 'document not found',
-            type: 'string',
-        }
-    },
-    security: [
-        // {
-        //     "apiKey": []
-        // }
-    ]
-}
-
-export const createCategoryOpts: FastifySchema = {
-    description: 'create category with counter',
-    tags: ['categorys'],
-    summary: 'qwerty',
-    body: {
-        type: 'object',
-        properties: {
-            categoryTitle: { type: 'string', default: "im title of a category" },
-            counterNum: { type: 'integer', default: 200 }
-        }
-    },
-    response: {
-        200: {
-            description: 'Successful response',
-            type: 'object',
-            properties: {
-                title: { type: 'string' },
-                counter: {
-                    type: 'object',
-                    properties: {
-                        counter_number: { type: 'integer' },
-                    }
-                },
-            }
-        },
-        // 500: {
-        //     description: 'internal server error',
-        //     type: 'string',
-        // }
     },
     security: [
         // {

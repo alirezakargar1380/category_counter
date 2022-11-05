@@ -17,7 +17,7 @@ export default {
     produces: ['application/json'],
     tags: [
       { name: 'categorys', description: '' },
-      { name: 'null', description: '' }
+      { name: 'counters', description: '' }
     ],
     definitions: {
       User: {

@@ -70,30 +70,38 @@ export const getCategoryByIdOpts: FastifySchema = {
 }
 
 export const createCategoryOpts = {
-    schema: {
-        description: 'create category with counter',
-        tags: ['categorys'],
-        summary: 'qwerty',
-        body: {
+    description: 'create category with counter',
+    tags: ['categorys'],
+    summary: 'qwerty',
+    body: {
+        type: 'object',
+        properties: {
+            categoryTitle: { type: 'string', default: "im title of a category" },
+            counterNum: { type: 'integer', default: 200 }
+        }
+    },
+    response: {
+        200: {
+            description: 'Successful response',
             type: 'object',
             properties: {
-                categoryTitle: { type: 'string' },
-                counterNum: { type: 'integer' }
+                title: { type: 'string' },
+                counter: { 
+                    type: 'object',
+                    properties: {
+                        counter_number: { type: 'integer' },
+                    }
+                },
             }
         },
-        response: {
-            200: {
-                description: 'Successful response',
-                type: 'object',
-                properties: {
-                    hello: { type: 'string' }
-                }
-            }
-        },
-        security: [
-            // {
-            //     "apiKey": []
-            // }
-        ]
-    }
+        500: {
+            description: 'internal server error',
+            type: 'string',
+        }
+    },
+    security: [
+        // {
+        //     "apiKey": []
+        // }
+    ]
 }

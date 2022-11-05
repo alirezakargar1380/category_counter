@@ -12,7 +12,7 @@ import swaggerConfig from '../Config/swagger.config';
 export default (fastifyApp: FastifyInstance) => {
 
     fastifyApp.register(mongoDB_plugin)
-    
+    fastifyApp.register(require('fastify-xml-body-parser'))
     fastifyApp.register(cors)
 
     // Swagger

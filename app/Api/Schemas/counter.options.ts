@@ -24,9 +24,9 @@ export const plusCounterOpts: FastifySchema = {
         },
     },
     security: [
-        // {
-        //     "apiKey": []
-        // }
+        {
+            "authorization": []
+        }
     ]
 }
 
@@ -54,8 +54,8 @@ export const minCounterOpts: FastifySchema = {
         },
     },
     security: [
-        // {
-        //     "apiKey": []
-        // }
+        {
+            "authorization": []
+        }
     ]
 }

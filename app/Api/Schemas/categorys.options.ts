@@ -30,9 +30,9 @@ export const getAllCategoryOpts: FastifySchema = {
         },
     },
     security: [
-        // {
-        //     "apiKey": []
-        // }
+        {
+            "authorization": []
+        }
     ]
 }
 
@@ -69,9 +69,9 @@ export const getCategoryByIdOpts: FastifySchema = {
         }
     },
     security: [
-        // {
-        //     "apiKey": []
-        // }
+        {
+            "authorization": []
+        }
     ]
 }
 
@@ -106,8 +106,8 @@ export const createCategoryOpts: FastifySchema = {
         // }
     },
     security: [
-        // {
-        //     "apiKey": []
-        // }
+        {
+            "authorization": []
+        }
     ]
 }

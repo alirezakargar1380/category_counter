@@ -10,8 +10,9 @@ import * as counterService from '../../Services/counter.service';
 import { ICounter } from '../../Shared/interfaces/counter.interface';
 
 import validation from "../../Validation/category.validation"
+import { ILoginMiddlewareHeaders } from '../../Shared/interfaces/api/login.middleware.interface';
 
-export const getCategoryById = async (request: FastifyRequest<{ Params: IParamGetCategoryById }>, reply: FastifyReply) => {
+export const getCategoryById = async (request: FastifyRequest<{ Params: IParamGetCategoryById, Headers: ILoginMiddlewareHeaders }>, reply: FastifyReply) => {
     try {
         reply.status(200).send(await categoryService.getCategoryById(request.params.category_id))
     } catch (error: any) {
@@ -20,7 +21,7 @@ export const getCategoryById = async (request: FastifyRequest<{ Params: IParamGe
     }
 }
 
-export const getCategorys = async (request: FastifyRequest<{ Params: IParamGetCategorys }>, reply: FastifyReply) => {
+export const getCategorys = async (request: FastifyRequest<{ Params: IParamGetCategorys, Headers: ILoginMiddlewareHeaders }>, reply: FastifyReply) => {
     try {
         validation.update(request.params)
         reply.status(200).send(await categoryService.getCategory(Number(request.params.page_num)))
@@ -31,7 +32,7 @@ export const getCategorys = async (request: FastifyRequest<{ Params: IParamGetCa
     }
 }
 
-export const createCategorys = async (request: FastifyRequest<{ Body: IBodyCreateCategory, Reply: IReplyCreateCategory }>, reply: FastifyReply) => {
+export const createCategorys = async (request: FastifyRequest<{ Body: IBodyCreateCategory, Reply: IReplyCreateCategory, Headers: ILoginMiddlewareHeaders }>, reply: FastifyReply) => {
     try {
         const { categoryTitle, counterNum } = request.body
 

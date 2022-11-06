@@ -33,9 +33,9 @@ export default {
       }
     },
     securityDefinitions: {
-      apiKey: {
+      authorization: {
         type: 'apiKey',
-        name: 'apiKey',
+        name: 'authorization',
         in: 'header'
       }
     }
